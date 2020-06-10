@@ -63,33 +63,33 @@
 </head>
 
 <body>
-        <div class="container">
-    
-            <div id="data">
-                <label for="radius"><b>radius </b></label>
-                <br>
-                <input id="radius" placeholder="radius" style="background-color: plum;" type="text">
-                <br>
-                <label for="volume"><b> volume </b></label>
-                <br>
-                <span id="volume" style="background-color: plum;"></span>
-                <br>
-                <br>
-                <button id="Calculate" onclick="focusMethod()" class="myButton">Calculate</button>
-    
-            </div>
-            <center>
-                <div id="canvas">
-                    <label for="painter"><b>Drawing On Canvas! </b></label>
-                    <br>
-                    <canvas id="painter" width="600" height="600"></canvas>
-                    <br>
-                    <button id="clear" class="myButton"> clear</button>
-    
-                </div>
-    
-            </center>
+    <div class="container">
+
+        <div id="data">
+            <label for="radius"><b>radius </b></label>
+            <br>
+            <input id="radius" placeholder="radius" style="background-color: plum;" type="text">
+            <br>
+            <label for="volume"><b> volume </b></label>
+            <br>
+            <span id="volume" style="background-color: plum;"></span>
+            <br>
+            <br>
+            <button id="Calculate" onclick="focusMethod()" class="myButton">Calculate</button>
+
         </div>
+        <center>
+            <div id="canvas">
+                <label for="painter"><b>Drawing On Canvas! </b></label>
+                <br>
+                <canvas id="painter" width="600" height="600"></canvas>
+                <br>
+                <button id="clear" class="myButton"> clear</button>
+
+            </div>
+
+        </center>
+    </div>
 
     <script>
         var radius = document.getElementById("radius");
@@ -106,7 +106,7 @@
         btnCalc.addEventListener("click", calculation);
         btnClear.addEventListener("click", ClearCanvas);
 
-        // drawBonus();
+        window.onload = drawBonus();
 
         focusMethod = function getFocus() {
             document.getElementById("radius").focus();
@@ -133,8 +133,8 @@
         function drawACircle(x, y, r) {
             ctx.beginPath();
             ctx.arc(x, y, r, 0, 2 * Math.PI);
-            ctx.fillStyle = randomColor();
-            ctx.fill();
+            ctx.strokeStyle = randomColor();
+            ctx.stroke();
         }
 
         function ClearCanvas() {
@@ -147,12 +147,11 @@
             return color;
         }
 
-// function drawBonus(){
-//   setInterval(() => {
-//     drawACircle(x,y,250)
-//   }, 1000);
-// }
-  
+        function drawBonus() {
+
+        }
+
+
     </script>
 
 </body>
